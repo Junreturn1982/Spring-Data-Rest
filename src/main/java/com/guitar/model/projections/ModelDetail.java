@@ -8,14 +8,19 @@ import com.guitar.model.Manufacturer;
 import com.guitar.model.Model;
 import com.guitar.model.ModelType;
 
-@Projection(name="modelDetail", types = {Model.class})
+@Projection(name = "modelDetail", types = { Model.class })
 public interface ModelDetail {
-	
-	String getName();	
+
+	String getName();
+
 	BigDecimal getPrice();
+
 	Manufacturer getManufacturer();
+
 	ModelType getModelType();
+
 	int getFrets();
+
 	String getWoodType();
- 
+
 }
