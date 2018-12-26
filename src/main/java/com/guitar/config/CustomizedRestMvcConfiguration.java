@@ -6,8 +6,10 @@ import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 
 @Configuration
-public class CustomizedRestMvcConfiguration extends  RepositoryRestMvcConfiguration {
+public class CustomizedRestMvcConfiguration extends RepositoryRestMvcConfiguration {
+
 	
+
 	@Value("${pathbaseUri}")
 	private String pathbaseUri;
 
@@ -17,5 +19,12 @@ public class CustomizedRestMvcConfiguration extends  RepositoryRestMvcConfigurat
 		config.setBaseUri(pathbaseUri);
 		return config;
 	}
+	
+//	@Override
+//	protected void configureJacksonObjectMapper(ObjectMapper objectMapper) {
+//		super.configureJacksonObjectMapper(objectMapper);
+//		objectMapper.setPropertyNamingStrategy(new FirstLetterCapsStrategy());
+//		objectMapper.setDateFormat(new ISO8601DateFormat());
+//	}
 
 }
